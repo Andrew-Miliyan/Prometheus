@@ -36,6 +36,7 @@ sudo chown prometheus:prometheus /etc/prometheus
 sudo chown -R prometheus:prometheus /etc/prometheus/consoles
 sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries
 sudo chown -R prometheus:prometheus /var/lib/prometheus
+cd Prometheus
 sudo mv prometheus.service /etc/systemd/system  ##
-sudo chmod +x ./ start_prometheus ##
-sudo chmod +x ./ take_info ##
+sudo chmod +x ./start_prometheus.sh ##
+sudo chmod +x ./take_info.sh ##

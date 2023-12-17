@@ -31,7 +31,7 @@ def menu():
 
 
 def installPro():
-    comIns = ['sudo chmod +x ./ instal_scipt',
+    comIns = ['sudo chmod +x ./ instal_script',
                 'sudo ./instal_script']
     osCommand = '\n'.join(comIns)
     os.system(osCommand)

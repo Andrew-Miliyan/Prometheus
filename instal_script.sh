@@ -36,7 +36,17 @@ sudo chown prometheus:prometheus /etc/prometheus
 sudo chown -R prometheus:prometheus /etc/prometheus/consoles
 sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries
 sudo chown -R prometheus:prometheus /var/lib/prometheus
-cd Prometheus
-sudo mv prometheus.service /etc/systemd/system  ##
-sudo chmod +x ./start_prometheus.sh ##
-sudo chmod +x ./take_info.sh ##
+sudo mv prometheus.service /etc/systemd/system  
+sudo chmod +x ./ start_prometheus ##-----------
+sudo chmod +x ./ take_info ##------------------
+sudo chmod +x ./ console_status ##-------------
+sudo wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
+sudo useradd -M -r -s /bin/nologin node_exporter
+sudo mv node_exporter.service  /etc/systemd/system
+sudo systemctl daemon-reload
+sudo systemctl start node_exporter.service
+sudo mv -f node_exporter.service /etc/systemd/system
+sudo mv -f prometheus.yml /etc/prometheus 
+sudo systemctl daemon-reload
+sudo systemctl start node_exporter.service
+sudo systemctl restart prometheus.service

@@ -36,7 +36,7 @@ def installPro():
     osCommand = '\n'.join(comIns)
     os.system(osCommand)
     time.sleep(5)
-    
+    menu()
 
 def runPro():
     comRun = ['sudo chmod +x ./ start_prometheus',
@@ -60,6 +60,12 @@ def conStat():
     comStat = ['sudo chmod +x ./ console_status',
                 'sudo ./ console_status',]
     osCommand = '\n'.join(comStat)
+    os.system(osCommand)
+    menu()
+def webInfo():
+    comWeb =  ['sudo chmod +x ./ take_info',
+                'sudo ./ take_info',]
+    osCommand = '\n'.join(comWeb)
     os.system(osCommand)
     menu()
 

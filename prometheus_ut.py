@@ -7,9 +7,9 @@ import time
 import getpass
 
 
-user = getpass.getuser()
-sudo = subprocess.getoutput("groups "+user+"| grep -oE sudo")
-ip = subprocess.getoutput("hostname -I").strip()
+## user = getpass.getuser()
+## sudo = subprocess.getoutput("groups "+user+"| grep -oE sudo")
+## ip = subprocess.getoutput("hostname -I").strip()
 
 def menu():
     option = input("Available options: \
